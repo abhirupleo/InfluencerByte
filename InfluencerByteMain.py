@@ -113,26 +113,28 @@ def importModule(choiceOfSocialMedia):
         import podcastModule as pt
 
 def analyseAndRecommendYoutube(choiceOfProduct):
+    influencer = ''
     if choiceOfProduct == 1:
         print("Recommending you an influencer to market your laptop\n")
         yt.convertViewsToFloat(yt.youtubeLaptopDataframe)
-        print(yt.youtubeLaptopDataframe['VIEWS'].describe())
-        print(yt.youtubeLaptopDataframe['VIEWS'].max())
-    if choiceOfProduct == 2:
+        influencer = yt.youtubeLaptopDataframe[yt.youtubeLaptopDataframe.VIEWS == yt.youtubeLaptopDataframe.VIEWS.max()]
+    elif choiceOfProduct == 2:
         print("Recommending you an influencer to market your mobile\n")
         yt.convertViewsToFloat(yt.youtubeMobileDataframe)
-        print(yt.youtubeMobileDataframe['VIEWS'].describe())
-        print(yt.youtubeMobileDataframe['VIEWS'].max())
-    if choiceOfProduct == 3:
+        influencer = yt.youtubeMobileDataframe[yt.youtubeMobileDataframe.VIEWS == yt.youtubeMobileDataframe.VIEWS.max()]
+    elif choiceOfProduct == 3:
         print("Recommending you an influencer to market your tv\n")
         yt.convertViewsToFloat(yt.youtubeTvDataframe)
-        print(yt.youtubeTvDataframe['VIEWS'].describe())
-        print(yt.youtubeTvDataframe['VIEWS'].max())
+        influencer = yt.youtubeTvDataframe[yt.youtubeTvDataframe.VIEWS == yt.youtubeTvDataframe.VIEWS.max()]
     else:
         print("Recommending you an influencer to market your smart-watch\n")
         yt.convertViewsToFloat(yt.youtubeWatchDataframe)
-        print(yt.youtubeWatchDataframe['VIEWS'].describe())  
-        print(yt.youtubeWatchDataframe['VIEWS'].max())
+        influencer = yt.youtubeWatchDataframe[yt.youtubeWatchDataframe.VIEWS == yt.youtubeWatchDataframe.VIEWS.max()]
+    print("We recommend ")
+    print(str(influencer.CHANNEL))
+    print("He has total views of:")
+    print(str(influencer.VIEWS))
+    print(yt.youtubeWatchDataframe['VIEWS'].max())
 
 #Printing the intro message
 print("Welcome the Influencer Byte application\n")
