@@ -18,6 +18,7 @@ from tkinter import *
 from tkinter.ttk import *
 import pandas as pd
 import matplotlib.pyplot as plt
+from IPython.display import display
 
 #global variable for user product to adveritse
 prod = 0;
