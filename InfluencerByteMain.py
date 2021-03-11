@@ -115,7 +115,7 @@ def importModule(choiceOfSocialMedia):
 def analyseAndRecommendYoutube(choiceOfProduct):
     influencer = ''
     if choiceOfProduct == 1:
-        print("Recommending you an influencer to market your laptop\n")
+        print("\nRecommending you an influencer to market your laptop...\n")
         yt.convertViewsToFloat(yt.youtubeLaptopDataframe)
         influencer = yt.youtubeLaptopDataframe[yt.youtubeLaptopDataframe.VIEWS == yt.youtubeLaptopDataframe.VIEWS.max()]
     elif choiceOfProduct == 2:
@@ -130,11 +130,8 @@ def analyseAndRecommendYoutube(choiceOfProduct):
         print("Recommending you an influencer to market your smart-watch\n")
         yt.convertViewsToFloat(yt.youtubeWatchDataframe)
         influencer = yt.youtubeWatchDataframe[yt.youtubeWatchDataframe.VIEWS == yt.youtubeWatchDataframe.VIEWS.max()]
-    print("We recommend ")
-    print(str(influencer.CHANNEL))
-    print("He has total views of:")
-    print(str(influencer.VIEWS))
-    print(yt.youtubeWatchDataframe['VIEWS'].max())
+    print("We recommend: " + influencer.iloc[0]['CHANNEL'])
+    print("\nHe has total views of " + str(influencer.iloc[0]['VIEWS']) + ' on his video ' + influencer.iloc[0]['TITLE'])
 
 #Printing the intro message
 print("Welcome the Influencer Byte application\n")
