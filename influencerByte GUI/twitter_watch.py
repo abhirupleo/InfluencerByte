@@ -5,7 +5,7 @@ Created on Wed Mar 10 19:13:11 2021
 @author: Jenny
 
 Module Description:
-    This module contains all the import paths for youtube data
+    This module contains all the import paths for twitter data
     and also the creation of all pandas dataframe
     This file will contain all the required helper function too needed for Twitter database analyses
 """
